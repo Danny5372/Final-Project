@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (max-width: 850px){
+    section{
+        width: 500px;
+    }
+
+    section .link-container, .format-container, .button-container{
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 550px){
+    section{
+        width: 350px;
+        height: 450px;
+    }
+
+    section .link-container, .format-container, .button-container{
+        width: 300px;
+    }
+}
+
+body{
+    background-color: #031321;
+    font-family: sans-serif;
+    height: 100vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background-color: #031321;
+    align-items: center;
+}
+header h1{
+    color: white;
+    border-bottom: 3px solid #1695F7;
+}
+ul li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: ease-in all 0.5s;
+}
+ul li a:hover{
+    color: #1695F7; border-bottom: 1px solid #1695F7;
+    transition: ease-in all 0.5s;
+}
+section{
+    width: 800px;
+    height: 400px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    border: 3px solid #1695F7;
+}
+section h1{
+    color: #1695F7;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 40px;
+    border-bottom: 3px solid #1695F7;
+}
+section .link-container, .format-container, .button-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 500px;
+}
+.link-container input .format-container select{
+    outline: none;
+    height: 5px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    border: 2px solid #1695F7;
+    font-size: 15px;
+}
+section .button-container button{
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    color: #fff;
+    background-color: #1695F7;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.link{
+    border-color: white;
+    border-bottom: #1695F7;
+}
+.format{
+    border-color: #1695F7;
+}
+
+/*Input animation start*/
+.link-container{
+    width: 250px;
+    padding: 20px;
+    background-color: white;
+
+}
+.link-container .fill{
+    position: relative;
+}
+.link-container .fill input{
+    width: 98%;
+    background: transparent;
+    color: black;
+    border: none;
+    border-bottom: 1px solid #1695F7;
+    font-size: 20px;
+    padding: 5px;
+}
+.link-container .fill label{
+    letter-spacing: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 8px 0;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+.link:focus~label,
+.link:valid~label{
+    top: -30px;
+    font-size: 15px;
+}
+/*Input animation end*/
+/*Select style start*/
+select{
+    color: #1695F7;
+    font-size: 20px;
+    border: 2px solid;
+}
+/*Select style end*/

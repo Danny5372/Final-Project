@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Downloader</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+     crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
+    <link rel="stylesheet" href="downloader-style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body class="animate__animated animate__fadeIn">
+    <header>
+        <h1>Welcome to the Audio Downloader</h1>
+        <ul>
+            <li><a href="index.html">Back to main menu</a></li>
+            <li> <a href="audio-visualizer.html">Go to Audio Visualizer</a> </li>
+        </ul>
+    </header>
+    <section>
+        <h1>Audio Downloader</h1>
+        <p>Supports every platform.</p>
+        <div class="link-container">
+            <div class="fill">
+                <input type="text" class="link" required>
+                <label for="" style="color: #1695F7;">Video/Audio Link:</label>
+            </div>
+            
+        </div>
+        <div class="format-container">
+            <label for="format:" style="font-size: 20px; color: #1695F7;">Format:</label>
+            <select class="format" required>
+                <option selected disabled>Please select format</option>
+                <!--<option value="480">480p</option>
+                <option value="720">720P</option>
+                <option value="1080">1080P</option>
+                <option value="4K">4K</option>
+                <option value="8K">8K</option>-->
+                <option value="mp3">MP3</option>
+            </select>
+        </div>
+        <div class="button-container">
+            <button class="button" type="submit">Start</button>
+        </div>
+    </section>
+
+    <script>
+
+        $(".button").click(function(){
+            var link = $(".link").val();
+            var format = $(".format").children("option:selected").val()
+            var src = "" + link + "=" + format + "";
+            download(link, format);
+        });
+
+        function download(link, format){
+            $('.button-container').html('<iframe style="height:50px; border:none; overflow:hidden;" src="https://loader.to/api/button/?url=' + link + '&f=' + format + '"></iframe>');
+        }
+    </script>
+</body>
+</html>

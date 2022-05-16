@@ -1,0 +1,189 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Music Visualizer</title>
+    <link rel="stylesheet" href="ad/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  />
+    <script src="ad/script.js"></script>
+  </head>
+  <style>
+      body{
+          background-image: url("images/Project\ A.V\ copy.png");
+      }
+    .button-1 {
+        position: relative;
+        display: inline-block;
+        padding: 30px 45px;
+        color: #2196f3;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-decoration: none;
+        font-size: 24px;
+        overflow: hidden;
+        transition: 0.2s;
+        text-align: center;
+    }
+    .button-1:hover{
+        color: #255784;
+        background: #2196f3;
+        box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+        transition-delay: 1.25s;
+        cursor: pointer;
+        }
+    .button-1 span{
+        position: absolute;
+        display: block;
+    }
+    .button-1 span:nth-child(1){
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #255784);
+    }
+    .button-1:hover span:nth-child(1){
+        left: 100%;
+        transition: 1s;
+    }
+    .button-1 span:nth-child(3){
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(270deg, transparent, #255784);
+    }
+    .button-1:hover span:nth-child(3){
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.5s;
+    }
+    .button-1 span:nth-child(2){
+        top: -100%;
+        right: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #255784);
+    }
+    .button-1:hover span:nth-child(2){
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+    .button-1 span:nth-child(4){
+        bottom: -100%;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #255784);
+    }
+    .button.button-1 span:nth-child(4){
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0.75s;
+    }
+    #myfile{
+      position:fixed;
+    }
+    ::-webkit-file-upload-button {
+        padding: 10px 20px;
+        overflow: hidden;
+        color: #fff;
+        border: 3px solid #0031E7;
+        background-image: -webkit-linear-gradient(30deg, #0031E7 50%, transparent 50%);
+        background-image: linear-gradient(30deg, #0031E7 50%, transparent 50%);
+        background-size: 600px;
+        background-repeat: no-repeat;
+        background-position: 0%;
+        -webkit-transition: background 300ms ease-in-out;
+        transition: background 300ms ease-in-out;
+    }
+    ::-webkit-file-upload-button:hover{
+        background-position: 100%;
+         color: #00007C;
+    }
+    .button-2 {
+        width: 200px;
+        left:0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: center;
+        color: #000;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 600;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 24;
+        margin-left: 10px;
+        color: #fff;
+        border: 3px solid #1695F7;
+        background-image: -webkit-linear-gradient(20deg, #1695F7 50%, transparent 50%);
+        background-image: linear-gradient(20deg, #1695F7 50%, transparent 50%);
+        background-size: 500px;
+        background-repeat: no-repeat;
+        background-position: 0%;
+        -webkit-transition: background 300ms ease-in-out;
+        transition: background 300ms ease-in-out;
+    }
+.button-2:hover {
+  background-position: 100%;
+  color: #1695F7;
+}
+.button-3 {
+        width: 200px;
+        left: 0;
+        top: 20%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: center;
+        color: #000;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 600;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 24;
+        margin-left: 10px;
+        color: #fff;
+        border: 3px solid #1695F7;
+        background-image: -webkit-linear-gradient(20deg, #1695F7 50%, transparent 50%);
+        background-image: linear-gradient(20deg, #1695F7 50%, transparent 50%);
+        background-size: 500px;
+        background-repeat: no-repeat;
+        background-position: 0%;
+        -webkit-transition: background 300ms ease-in-out;
+        transition: background 300ms ease-in-out;
+    }
+.button-3:hover {
+  background-position: 100%;
+  color: #1695F7;
+}
+  </style>
+  <body>
+      <div class="animate__animated animate__fadeIn">
+          <a href="./index.html" class="button-2">Return</a>
+  <a class="button-1">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <input type="file" id="file-input" accept="audio/*,video/*,image/*" style="display:none;">
+    <label for="file-input">Choose a file</label>
+</a>
+
+    <h3 id="name"></h3>
+    <a href="downloader.html" class="button-3">Downloader</a>
+    <canvas id="canvas"></canvas>
+    <audio id="audio" controls></audio>
+</div>
+  </body>
+</html>
